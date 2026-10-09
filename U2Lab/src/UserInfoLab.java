@@ -1,9 +1,26 @@
+import java.util.Scanner;
 public class UserInfoLab {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         // Part 1
         // Create a Scanner for keyboard input
         // Ask the user to enter their first and last name and pass these
         // values to the generateUsername method and save the returned result.
+
+        // Create Scanner for keyboard input
+        Scanner input = new Scanner(System.in);
+
+        // First name
+        System.out.print("Enter your first name: ");
+        String firstName = input.nextLine();
+
+        // Last name
+        System.out.print("Enter your last name: ");
+        String lastName = input.nextLine();
+
+        // Pass both names to the method and save the result
+        String username = generateUsername(firstName, lastName);
+
 
         // Part 2
         // Ask the user to enter a password and pass this value to the validatePassword method.
@@ -20,15 +37,18 @@ public class UserInfoLab {
 
     }
 
-    public static String generateUsername(String firstName, String lastName) {
+    public static String generateUsername(String firstName, String lastName)
+    {
         // Fill in this method and return an appropriate username
         return "";
     }
-    public static boolean validatePassword(String password) {
+    public static boolean validatePassword(String password)
+    {
         // Fill in this method and return true/false if the password is valid
         return true;
     }
-    public static String maskCreditCard(String creditCardNumber) {
+    public static String maskCreditCard(String creditCardNumber)
+    {
         // Fill in this method and if the credit card is valid, return a masked CC
         return "";
     }
@@ -38,9 +58,11 @@ public class UserInfoLab {
      @param str The string to check
      @return true or false if a digit is present
      */
-    public static boolean containsDigit(String str) {
+    public static boolean containsDigit(String str)
+    {
         char[] chars = str.toCharArray();
-        for (char c: chars) {
+        for (char c: chars)
+        {
             if (Character.isDigit(c))
                 return true;
         }
@@ -52,9 +74,11 @@ public class UserInfoLab {
      * @param str The string to check
      * @return true or false if the string is ALL digits
      */
-    public static boolean allDigits(String str) {
+    public static boolean allDigits(String str)
+    {
         char[] chars = str.toCharArray();
-        for (char c: chars) {
+        for (char c: chars)
+        {
             if (!Character.isDigit(c))
                 return false;
         }
