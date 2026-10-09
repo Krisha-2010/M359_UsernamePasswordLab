@@ -37,7 +37,18 @@ public class UserInfoLab
         // Part 3
         // If the user entered a valid password in step 2, then ask the user to enter their
         // credit card number and pass this value to the maskCreditCard method.
+        if (password)
+        {
+            // Ask user for credit card number
+            System.out.print("Enter credit card number: ");
+            String creditCard = input.nextLine();
 
+            // Pass card number to method and save result
+            String maskedCard = maskCreditCard(creditCard);
+
+            // Display the masked credit card
+            System.out.println(maskedCard);
+        }
 
         // Part 4
         // If the user entered a valid password AND valid credit card number, display the output
@@ -102,10 +113,21 @@ public class UserInfoLab
         return valid;
     }
 
-    public static String maskCreditCard(String creditCardNumber)
-    {
+    public static String maskCreditCard(String creditCardNumber) {
         // Fill in this method and if the credit card is valid, return a masked CC
-        return "";
+
+        // Check if card has exactly 16 digits
+        if (creditCardNumber.length() == 16 && allDigits(creditCardNumber)) {
+            // Get the last 4 digits
+            String lastFour = creditCardNumber.substring(12);
+
+            // Hide the first 12 digits and show the last 4
+            return "**** **** **** " + lastFour;
+        }
+        else
+        {
+            return "N/A";
+        }
     }
 
     /**
