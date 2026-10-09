@@ -37,14 +37,16 @@ public class UserInfoLab
         // Part 3
         // If the user entered a valid password in step 2, then ask the user to enter their
         // credit card number and pass this value to the maskCreditCard method.
+        String maskedCard = "";
+        String creditCard =  " ";
         if (password)
         {
             // Ask user for credit card number
             System.out.print("Enter credit card number: ");
-            String creditCard = input.nextLine();
+            creditCard = input.nextLine();
 
             // Pass card number to method and save result
-            String maskedCard = maskCreditCard(creditCard);
+            maskedCard = maskCreditCard(creditCard);
 
             // Display the masked credit card
             System.out.println(maskedCard);
@@ -55,6 +57,11 @@ public class UserInfoLab
         // as shown in the demo video
         // https://drive.google.com/file/d/1sMOw5wkOgSfuUcvQhFyZ5flnv_d9qQd3/view?usp=sharing
 
+        //Summary:
+        System.out.println(" ");
+        System.out.println("Summary: ");
+        System.out.println("Username: " + username);
+        System.out.println("Credit Card: " + maskedCard);
     }
 
     public static String generateUsername(String firstName, String lastName)
